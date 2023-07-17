@@ -1,0 +1,82 @@
+1.Is even ? 
+
+import java.io.*;
+
+import java.util.*;
+class UserMainCode
+{
+   public int isEven(int input1){
+      if(input1%2==0) return 2;
+      else return 1;
+  }
+}
+
+2.Is odd ?
+
+import java.io.*;
+import java.util.*;
+class UserMainCode
+{
+public int isOdd(int input1){
+  if(input1%2!=0) return 2;
+  else
+      return 1;
+   }
+}
+
+3.Return Last digit of number ?
+
+import java.io.*; 
+import java.util.*;
+class UserMainCode
+{
+   public int lastDigitOf(int input1){ 
+       if(input1<0)
+           input1=(-1)*input1;
+       return input1%10;
+    }
+}
+
+4.Return Second last digit of number ?
+
+import java.io.*;
+import java.util.*;
+ start class UserMainCode
+{
+   public int secondLastDigitOf(int input1){
+       if(input1<0)
+          input1=(-1)*input1;
+       int c=0; 
+       int i=integer.toString(input1)             length();
+       int r=0;
+       if(l==1)
+         return -1;
+       else
+{
+       while(input1>0)
+    {
+         r=input1%10;
+         c++;
+        input1/=10;
+         if(c==2)
+          break; 
+    }
+          return r;
+  }
+}
+    
+
+5.Sum of last digit of two given numbers ?
+
+import java.io.*;
+import java.util.*;
+class UserMainCode
+{
+public int addLastDigits int input,int input2){
+  if(input1<0)
+     input=(-1)*input1;
+  if(input2<0)
+     input2(-1)*input2;
+  return (input1%10)+(input2%10);
+      }
+}
