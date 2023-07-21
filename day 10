@@ -1,0 +1,41 @@
+1.Sum of power of digits ?
+
+import java.io.*;
+import java.util.*;
+import java.lang.Math.*;
+class UserMainCode
+{
+   public int sumOfPowerOfDigits(int input1){
+     Integer sum=0,r=0,prev=0;
+     Double f1,f2;
+     while(input1>0){
+       r=Integer.valueOf(input1%10);
+       f1=Double.valueOf(r);
+       f2=Double.valueOf(prev);
+       f1=Math.pow(f1,f2);
+       sum+=f1.intValue();
+       prev=Integer.valueOf(r);
+       input1/=10;
+}
+   return sum;
+}
+}
+
+2.Sum of sum of digits in cyclic order ?
+
+import java.io.*;
+import java.util.*;
+class UserMainCode
+{
+public int sumOfSumsOfDigits(int input1){
+   int last=0,current=0,r=0,sum=0;
+   while(input1>0){
+    r=input1%10;
+    current=r+last;
+    input1/=10;
+    sum=sum+current;
+    last=last+r;
+}
+return sum;
+}
+}
