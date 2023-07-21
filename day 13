@@ -1,0 +1,201 @@
+
+1.The "Nambiar number"generator ?
+  
+import java.io.*;
+import java.util.*;
+class UserMainCode
+{
+public int nnGenerator(String input1){
+  String s=input1;
+  int len=s.length();
+  int a[]=new int[len];
+  for(int i=0 ;i <len ;i++)
+{
+   a[i]=(s.charAt(i)-'0');
+}
+  System.out.println(Arrays.toString(a));
+  int i=0;
+  String temp="";
+  int k=a[i];
+  int evenflag,oddflag;
+  if(k%2==0)
+{
+   evenflag=1;
+   oddflag=0;
+}
+  else
+{
+   evenflag=0;
+   oddflag=1;
+}
+  while(i<len)
+{
+   if(i==len-1)
+{
+    System.out.print(k);
+    temp+=k;
+    break;
+}
+   if((k%2!=0)&&(oddflag==1))
+{
+    k+=a[i+1];
+    i++;
+}
+  else if((k%2==0)&&(evenflag==1))
+{
+    k+=a[i+1];
+    i++;
+}
+   else
+{
+    System.out.print(k+" ");
+    temp+=k;
+    i=i+1;
+    k=a[i];
+    if(k%2==0)
+ {
+   evenflag=1;
+   oddflag=0;
+ }
+ else
+ {
+  evenflag=0;
+  oddflag=1;
+ }
+}
+}
+ return Integer.parseInt(temp);
+}
+}
+
+2.User id generation ?
+  
+import java.io.*;
+import java.util.*;
+class UserMainCode
+{
+   public String userIdGeneration(String input1,String
+input2,int input3,int input4){
+    int s1=input1.length();
+    int s2=input2.length();
+    String longer="";
+    String smaller="";
+    String output1="";
+    if(s1==s2)
+ {
+    if(input1.compareTo(input2)>0)
+ {
+      longer=input1;
+      smaller=input2;
+ }
+    else
+ {
+      longer=input2;
+      smaller=input1;
+ }
+ }
+    if(s1>s2){
+     longer=input1;
+     smaller=input2;
+ }
+  else if(s1<s2)
+ {
+    longer=input2;
+    smaller=input1;
+ }
+ String pin=input3+"";
+ String output=smaller.charAt(0)+longer+pin.charAt
+(input4-1)+pin.charAt(pin.length()-input4);
+ for(int i=0;i<output.length();i++)
+ {
+   if(Character.isLowerCase(output.charAt
+(i)))
+ {
+   output1+=Character.toUpperCase
+(output.charAt(i));
+ }
+  else
+ {
+   output1+=Character.toLowerCase
+(output.charAt(i));
+ }
+ }
+return output1;
+ }
+ }
+
+3.Message controlled robot movement ?
+  
+import java.io.*;
+import java.util.*;
+class UserMainCode
+{
+   public String moveRobot(int input1,int input2,String input3,String input4){
+     String path[]=input3.split("-");
+     int x=Integer.parseInt(path[0]);
+     int y=Integer.parseInt(path[1]);
+     String pos=path[2];
+     String arr[]=input4.split(" ");
+     int f=0;
+for(String s:arr)
+{
+  if(s.equals("R"))
+{
+    if(pos.equals("N"))
+pos="E";
+    else if(pos.equals("E"))
+pos="S";
+    else if(pos.equals("S"))
+pos="W";
+    else
+pos="N";
+}
+  else if(s.equals("L"))
+{
+    if(pos.equals("N"))
+pos="W";
+    else if(pos.equals("E"))
+pos="N";
+    else if(pos.equals("S"))
+pos="E";
+    else
+pos="S";
+}
+  else if(f!=1)
+{
+    if(pos.equals("N"))
+{
+      if(input2>y)
+        y=y+1;
+      else
+        f=1;
+}
+    else if(pos.equals("S"))
+{ 
+      if(y>0)
+         y=y-1;
+      else
+         f=1;
+}
+    else if(pos.equals("E"))
+{
+      if(input1>x)
+        x=x+1;
+      else
+        f=1;
+}
+    else
+{
+    if(x>0)
+      x=x-1;
+    else
+      f=1;
+}
+}
+}
+ if(f!=1)
+ return String.valueOf(x)+"-"+String.valueOf(y)+"-"+String.valueOf(pos);
+  else
+ return String.valueOf(x)+"-"+String.valueOf(y)+"-"+String.valueOf(pos)+"-"+"ER";
+}
+}
