@@ -1,0 +1,88 @@
+1.Numbers of prime in specified range ?
+
+import java.io.*;
+import java.util.*;
+public int countPrimesInRange(int input1.int input2){
+int k=2;
+int d=input1,i,c=0;
+int p=0;
+ int cou=0;
+while(d<=input2){
+ for(i=2;i<d;i++){
+ if(d%i==0){
+   C++:
+ }
+}
+ if(c==0){
+   cou++;
+   System.out.println(d);
+}
+d++:
+c=0;
+}
+return cou;
+}
+}
+
+2.All digits count ?
+
+import java.io.*;
+import java.util.*;
+class UserMaindcode
+{
+public int allDigitsCount(int input1){ 
+  int c=0,r;
+  while(input1>0){
+  r=input1% 10;
+    c++;
+input1=input1/10;
+  }
+  return c;
+  }
+}
+
+3.Unique digits count ?
+
+import java.io.*;
+import java.util.*;
+public int uniqueDigitsCount(int input1){
+class UserMaincode
+{
+int c=0,r.i;
+ int h[]=new int[10];
+ while(input1>0){
+ r=input1% 10;
+   h[r]++;
+   input1=input1/10;
+}
+ for(i=0;i<10;i++){
+  if(h[i]>0){
+    C++:
+}
+}
+return c;
+}
+}
+
+4.Non repeated digits count ?
+
+import java.io.*; 
+import java.util.*;
+class UserMaincode
+{
+  public int nonRepeat DigitsCount(int input1){ 
+  int c=0.r.i;
+    int h[]=new int[10];
+    while(input1>0){
+    r=input1% 10:
+     h[r]++;
+     input1=input1/10
+}
+for(i=0;i<10;i++){
+  if(h[i]==1){
+   C++;
+}
+}
+return c;
+}
+}
