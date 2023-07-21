@@ -1,0 +1,272 @@
+
+1.Generate series and find nth element
+
+import java.io.*;
+import java.util.*;
+class UserMainCode
+{
+  public int seriesN(int input1,int input2,int input3,int input4){
+    int i=3,diff=0,next=0;
+    while(i<input4){
+     diff=input2-input1;
+     next=input3+diff;
+     input1=input2;
+     input2=input3;
+     input3=next;
+     i++;
+}
+return next;
+}
+}
+
+2.Find result after alternate add_sub on N ?
+
+import java.io.*;
+import java.uti.*;
+class UserMainCode
+{
+   public int AddSub(int input1,int input2){
+     int glob=0;
+   if(input2==1){
+     for(int i=0;i<=input1;i++){
+       if(i%2==0){
+         glob=glob+(input1-i);
+}
+       else glob=glob-(input1-i);
+}
+}
+   else{
+     for(int i=0;i<=input1;i++){
+        if(i%2==0 && i!=0){
+          glob=glob-(input1-i);
+}
+      else glob=glob+(input1-i);
+}
+}
+ return glob;
+}
+ }
+
+3.Find password ?
+
+import java.io.*;
+import java.util.*;
+class UserMainCode
+{
+ public int findPassword(int input1,int input2,int input3,int input4,int input5){
+  int[] h1=new int[10];
+  int[] h2=new int[10];
+  int[] h3=new int[10];
+  int[] h4=new int[10];
+  int[] h5=new int[10];
+  int t1=input1,t2=input2,t3=input3,t4=input4,t5=input5;
+  int stable_sum=0,unstable_sum=0,i;
+  while(input1>0)
+ {
+    h1[input1%10]++;
+    input1/=10;
+ }
+  while(input2>0)
+ {
+    h2[input2%10]++;
+    input2/=10;
+ }
+  while(input3>0)
+ {
+    h3[input3%10]++;
+    input3/=10;
+ }
+  while(input4>0)
+ {
+    h4[input4%10]++;
+    input4/=10;
+ }
+  while(input5>0)
+ {
+    h5[input5%10]++;
+    input5/=10;
+ }
+  for(i=0;i<10;i++)
+ {
+    System.out.println(h1[i]+" "+h2[i]+" "+h3[i]+" "+h4[i]+" "+h5[i]);
+    //System.out.print(" ");
+ }
+  int c=0;
+  for(i=0;i<10;i++)
+ {
+   if(h1[i]!=0)
+ {
+    c=h1[i];
+    break;
+ }
+ }
+  //System.out.print(c);
+  for(i=0;i<10;i++)
+ {
+   if(h1[i]!=0)
+ {
+     if(c!=h1[i])
+ { 
+     unstable_sum+=t1;
+     break;
+ }
+ }
+ }
+  //System.out.print(unstable_sum);
+  if(i==10)
+    stable_sum+=t1;
+  for(i=0;i<10;i++)
+ {
+    if(h2[i]!=0)
+ {
+     c=h2[i];
+     break;
+ }
+ }
+  for(i=0;i<10;i++)
+ {
+   if(h2[i]!=0)
+ {
+    if(c!=h2[i])
+ { 
+     unstable_sum+=t2;
+     break;
+ }
+ }
+ }
+  if(i==10)
+    stable_sum+=t2;
+  for(i=0;i<10;i++)
+ {
+   if(h3[i]!=0)
+ {
+    c=h3[i];
+    break;
+ }
+ }
+  for(i=0;i<10;i++)
+ {
+    if(h3[i]!=0)
+ {
+     if(c!=h3[i])
+ { 
+      unstable_sum+=t3;
+      break;
+ }
+ }
+ }
+  if(i==10)
+   stable_sum+=t3;
+ for(i=0;i<10;i++)
+ {
+    if(h4[i]!=0)
+ {
+     c=h4[i];
+     break;
+ }
+ }
+ for(i=0;i<10;i++)
+ {
+   if(h4[i]!=0)
+ {
+     if(c!=h4[i])
+ { 
+       unstable_sum+=t4;
+       break;
+ }
+ }
+ }
+  if(i==10)
+   stable_sum+=t4;
+ for(i=0;i<10;i++)
+ {
+  if(h5[i]!=0)
+ {
+   c=h5[i];
+   break;
+ }
+ }
+ for(i=0;i<10;i++)
+ {
+   if(h5[i]!=0)
+ {
+    if(c!=h5[i])
+ { 
+      unstable_sum+=t5;
+      break;
+ }
+ }
+ }
+  if(i==10)
+   stable_sum+=t5;
+  System.out.print(stable_sum);
+  System.out.print(unstable_sum);
+  return stable_sum-unstable_sum;
+ }
+}
+
+4.Calculate sum of non prime index values ?
+
+import java.io.*;
+import java.util.*;
+class UserMainCode
+{
+  public int sumOfNonPrimeIndexValues(int[] input1,int input2){
+   int sum=input1[0]+input1[1];
+   int i,j,flag;
+   for(i=3;i<input2;i++)
+ {
+    flag=1;
+    for(j=2;j<=Math.sqrt(i);j++)
+ {
+     if(i%j==0)
+ {
+      flag=0;
+      break;
+ }
+ }
+  System.out.println(flag);
+  if(flag==0)
+   sum+=input1[i];
+ }
+ return sum;
+ }
+}
+
+5.Find the one digit to be removed to form palindrome ?
+
+import java.io.*;
+import java.util.*;
+class UserMainCode
+{
+  public int digitRemove_Palin(int input1){
+   int[] h=new int[10];
+   int t=input1;
+   int r,rev=0;
+   while(input1>0)
+ {
+    r=input1%10;
+    rev=rev*10+r;
+    input1/=10;
+ }
+   if(rev==t)
+     return -1;
+   input1=t;
+   while(input1>0)
+ {
+    h[input1%10]++;
+    input1/=10;
+ }
+   //String s=String.valueOf(input1);
+   int index=-1,i;
+   for(i=0;i<10;i++)
+ {
+    if(h[i]%2==1)
+ {
+     index=i;
+ }
+ }
+   System.out.print(index);
+    return index;
+}
+}
