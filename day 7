@@ -11,7 +11,7 @@ class UserMaincode
     return "LESS";
   String s1=s[1]; 
   s1=s1.toUpperCase(); 
-  return $1;
+  return s1;
 }
 }
 
